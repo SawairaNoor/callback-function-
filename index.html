@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Function Example</title>
+</head>
+<body>
+
+  <h1>Callback Function Example</h1>
+
+  <button onclick="getData(displayData)">Fetch Data</button>
+
+  <script>
+    // Simulating a function that fetches data asynchronously from a server
+    function getData(callback) {
+      setTimeout(function() {
+        const data = { name: "John Doe", age: 30, city: "New York" };
+        callback(data); // Execute the callback function with fetched data
+      }, 2000); // Simulating a delay of 2 seconds
+    }
+
+    // Callback function to display fetched data
+    function displayData(data) {
+      alert(`Name: ${data.name}, Age: ${data.age}, City: ${data.city}`);
+    }
+  </script>
+
+</body>
+</html>
